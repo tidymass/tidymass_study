@@ -7,7 +7,8 @@ rm(list = ls())
 load("data_analysis/in_house_database_construction/test.database")
 
 dir.create("data_analysis/output_database",
-           showWarnings = FALSE)
+           showWarnings = FALSE,
+           recursive = TRUE)
 setwd("data_analysis/in_house_database_construction/")
 
 # **MassBank**

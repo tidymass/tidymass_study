@@ -4,7 +4,8 @@ library(tidymass)
 masstools::setwd_project()
 rm(list = ls())
 dir.create("data_analysis/pathway_enrichment",
-           showWarnings = FALSE)
+           showWarnings = FALSE,
+           recursive = TRUE)
 
 setwd("data_analysis/pathway_enrichment/")
 

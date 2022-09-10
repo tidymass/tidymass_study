@@ -5,7 +5,8 @@ masstools::setwd_project()
 rm(list = ls())
 
 dir.create("data_analysis/metabolite_annotaion",
-           showWarnings = FALSE)
+           showWarnings = FALSE,
+           recursive = TRUE)
 setwd("data_analysis/metabolite_annotaion/")
 
 # Data preparation
@@ -46,7 +47,8 @@ object
 
 # Add MS2 to `mass_dataset` object
 path = "ms2_data"
-dir.create(path)
+dir.create(path,
+           recursive = TRUE)
 
 ms2_data <- system.file("ms2_data", package = "metid")
 

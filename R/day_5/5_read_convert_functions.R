@@ -5,7 +5,8 @@ masstools::setwd_project()
 rm(list = ls())
 
 dir.create("data_analysis/massdatabase",
-           showWarnings = FALSE)
+           showWarnings = FALSE,
+           recursive = TRUE)
 
 setwd("data_analysis/massdatabase/")
 
