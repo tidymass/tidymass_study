@@ -37,3 +37,7 @@ vignettes/*.pdf
 
 # R Environment Variables
 .Renviron
+
+raw_data/example
+raw_data/example/
+raw_data/example/sample3.raw
