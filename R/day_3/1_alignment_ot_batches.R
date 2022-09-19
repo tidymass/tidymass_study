@@ -3,21 +3,21 @@ no_source()
 library(tidymass)
 masstools::setwd_project()
 rm(list = ls())
-dir.create("data_analysis/data_cleaning", 
+dir.create("data_analysis/data_cleaning",
            showWarnings = FALSE,
            recursive = TRUE)
 setwd("data_analysis/data_cleaning/")
 
 # **Data preparation**
-##See the [massdataset](https://tidymass.github.io/massdataset/) package, 
+##See the [massdataset](https://tidymass.github.io/massdataset/) package,
 ##and create you metabolomics dataset into 2 mass_dataset objects.
 
 ##Here we use the demo data from `demodata` package, so please install it first.
 
-if(!require(devtools)){
-  install.packages("devtools")
+if (!require(devtools)) {
+  install.packages("remotes")
 }
-devtools::install_github("tidymass/demodata")
+remotes::install_github("tidymass/demodata")
 
 library(demodata)
 
@@ -33,11 +33,15 @@ x = object1
 y = object2
 
 match_result =
-  align_batch(x = object1, y = object2, return_index = TRUE)
+  align_batch(x = object1,
+              y = object2,
+              return_index = TRUE)
 
 head(match_result)
 
 new_object =
-  align_batch(x = object1, y = object2, return_index = FALSE)
+  align_batch(x = object1,
+              y = object2,
+              return_index = FALSE)
 
 new_object

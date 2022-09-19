@@ -37,7 +37,6 @@ colnames(object2)
 
 cbind(object1, object2)
 
-
 ### `rbind()`
 
 ##`rbind()` means that two `mass_dataset` have same samples and totally different variables

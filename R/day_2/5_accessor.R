@@ -5,7 +5,6 @@ masstools::setwd_project()
 rm(list = ls())
 setwd("data_analysis/mass_dataset_class/")
 
-
 ## Data preparation
 data("expression_data")
 data("sample_info")

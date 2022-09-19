@@ -1,3 +1,6 @@
+####This is only for mac users
+##for windows users, just use the msconvert software, download it here:
+##https://proteowizard.sourceforge.io/
 no_source()
 
 library(tidymass)
@@ -7,7 +10,6 @@ rm(list = ls())
 setwd("raw_data/")
 
 ## Open docker
-
 
 ## Pull pwiz docker
 
@@ -36,8 +38,10 @@ parameter <-
 
 parameter
 
-convert_raw_data(input_path = "example/", 
-                 output_path = "mzxml/", 
-                 msconvert_parameter = parameter, 
-                 docker_parameters = c(),
-                 process_all = FALSE)
+convert_raw_data(
+  input_path = "example/",
+  output_path = "mzxml/",
+  msconvert_parameter = parameter,
+  docker_parameters = c(),
+  process_all = FALSE
+)

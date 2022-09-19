@@ -3,9 +3,11 @@ no_source()
 library(tidymass)
 masstools::setwd_project()
 rm(list = ls())
-dir.create("data_analysis/mass_dataset_class/", 
-           showWarnings = FALSE,
-           recursive = TRUE)
+dir.create(
+  "data_analysis/mass_dataset_class/",
+  showWarnings = FALSE,
+  recursive = TRUE
+)
 setwd("data_analysis/mass_dataset_class/")
 
 data("expression_data", package = "massdataset")
@@ -83,7 +85,6 @@ extract_variable_info_note(object)
 ##process_info
 extract_process_info(object)
 
-
 ##Processing information in mass_dataset class
 object =
   object %>%
@@ -110,6 +111,5 @@ process_info
 process_info$mutate_median_intensity
 
 process_info$mutate_median_intensity@parameter
-
 
 report_parameters(object = object, path = "parameters")

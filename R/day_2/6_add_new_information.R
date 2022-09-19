@@ -109,7 +109,6 @@ object2 =
 
 extract_variable_info(object2) %>% head()
 
-
 ###add a new column named as variable_id2 in variable_info
 object2 =
   object %>% 
@@ -128,7 +127,6 @@ object2 =
   left_join(new_variable_info, by = "variable_id")
 
 extract_variable_info(object2) %>% head()
-
 
 ##Add new samples to expression_data
 colnames(object)
