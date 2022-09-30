@@ -4,9 +4,11 @@ library(tidymass)
 masstools::setwd_project()
 rm(list = ls())
 
-dir.create("data_analysis/metabolite_annotaion",
-           showWarnings = FALSE,
-           recursive = TRUE)
+dir.create(
+  "data_analysis/metabolite_annotaion",
+  showWarnings = FALSE,
+  recursive = TRUE
+)
 setwd("data_analysis/metabolite_annotaion/")
 
 
@@ -85,6 +87,16 @@ ms2_plot_mass_dataset(object = object1,
                       variable_index = 1,
                       database = snyder_database_rplc0.0.3)
 
-ms2_plot_mass_dataset(object = object1,
-                      variable_index = 3,
-                      database = snyder_database_rplc0.0.3)
+ms2_plot_mass_dataset(
+  object = object1,
+  variable_index = 3,
+  database = snyder_database_rplc0.0.3,
+  interactive_plot = TRUE
+)
+
+ms2_plot_mass_dataset(
+  object = object1,
+  variable_index = 3,
+  database = snyder_database_rplc0.0.3,
+  interactive_plot = FALSE
+)

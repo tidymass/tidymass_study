@@ -22,6 +22,7 @@ setwd("data_analysis/data_cleaning/")
 peak_table_pos <-
   readr::read_csv("peak_tables/POS/Peak_table_for_cleaning.csv") %>%
   as.data.frame()
+
 sample_info_pos = readr::read_csv("sample_info/sample_info_pos.csv") %>%
   as.data.frame()
 
@@ -170,7 +171,6 @@ outlier_table %>%
   which()
 
 ##No outlier samples.
-
 ##Save data for next analysis.
 
 save(object, file = "peak_tables/POS/object")

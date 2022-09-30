@@ -20,25 +20,25 @@ object =
 object
 
 ## Base function
-object[1:5,]
-object[,1:5]
-object[1:10,1:5]
+object[1:5, ]
+object[, 1:5]
+object[1:10, 1:5]
 
 colnames(object)
-object[,"Blank_3"]
+object[, "Blank_3"]
 
 rownames(object) %>% head()
-object["M136T55_2_POS",]
+object["M136T55_2_POS", ]
 
-object["M136T55_2_POS","Blank_3"]
+object["M136T55_2_POS", "Blank_3"]
 
 ##If set `drop = TRUE`, then it will return a numeric vector, not a `mass_dataset`.
 
-head(object[,"Blank_3", drop = TRUE])
+head(object[, "Blank_3", drop = TRUE])
 
-unlist(object["M136T55_2_POS",,drop = TRUE] )
+unlist(object["M136T55_2_POS", , drop = TRUE])
 
-object["M136T55_2_POS","Blank_3",drop = TRUE]
+object["M136T55_2_POS", "Blank_3", drop = TRUE]
 
 ##We can also get the values from one `mass_dataset` class use `$` like a `data.frame`.
 head(object$Blank_3, 20)

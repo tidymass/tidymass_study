@@ -3,11 +3,13 @@ no_source()
 library(tidymass)
 masstools::setwd_project()
 rm(list = ls())
+
 dir.create(
   "data_analysis/mass_dataset_class/",
   showWarnings = FALSE,
   recursive = TRUE
 )
+
 setwd("data_analysis/mass_dataset_class/")
 
 data("expression_data", package = "massdataset")
@@ -32,7 +34,6 @@ export_mass_dataset(object = object,
                     path = "export_data")
 
 # mzMine feature table to mass_dataset class
-
 data("mzmine_table")
 head(mzmine_table)
 

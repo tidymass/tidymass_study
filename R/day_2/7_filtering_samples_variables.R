@@ -26,15 +26,15 @@ object
 
 ### `filter_samples()`
 
-###only remain the samples with NA number < 4 in all variables
-filter_samples(object, function(x) {
-  sum(is.na(x)) / length(x) < 0.4
-})
-
-###give the index
-filter_samples(object, function(x) {
-  sum(is.na(x)) / length(x) < 0.4
-}, prune = FALSE)
+# ###only remain the samples with NA number < 4 in all variables
+# filter_samples(object, function(x) {
+#   sum(is.na(x)) / length(x) < 0.4
+# })
+# 
+# ###give the index
+# filter_samples(object, function(x) {
+#   sum(is.na(x)) / length(x) < 0.4
+# }, prune = FALSE)
 
 ### `dplyr::filter()` function
 
@@ -63,16 +63,16 @@ colnames(object2)
 
 ### `filter_variables()` function
 
-####Filter variables which have more than 50% MVs in all samples.
-filter_variables(object, function(x) {
-  sum(is.na(x)) / length(x) < 0.5
-}, prune = FALSE) %>%
-  head()
-
-filter_variables(object, function(x) {
-  sum(is.na(x)) / length(x) < 0.5
-},
-prune = TRUE)
+# ####Filter variables which have more than 50% MVs in all samples.
+# filter_variables(object, function(x) {
+#   sum(is.na(x)) / length(x) < 0.5
+# }, prune = FALSE) %>%
+#   head()
+# 
+# filter_variables(object, function(x) {
+#   sum(is.na(x)) / length(x) < 0.5
+# },
+# prune = TRUE)
 
 ### `dplyr::filter()` function
 
@@ -84,5 +84,5 @@ object %>%
 ####Filter variables which mz > 500 and rt > 100
 object %>% 
   activate_mass_dataset(what = "variable_info") %>% 
-  filter(mz > 500 & rt > 100)
+  filter((mz > 100 & rt > 200) | (mz < 100 & rt > 500))
 

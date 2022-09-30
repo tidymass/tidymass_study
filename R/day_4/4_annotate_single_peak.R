@@ -69,8 +69,6 @@ object
 
 object@ms2_data
 
-
-
 # Annotate single peaks
 data("snyder_database_rplc0.0.3", package = "metid")
 

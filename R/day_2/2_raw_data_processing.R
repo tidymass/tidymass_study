@@ -16,9 +16,9 @@ massprocesser::process_data(
   snthresh = 5,
   noise = 500,
   threads = 6,
-  output_tic = TRUE,
-  output_bpc = TRUE,
-  output_rt_correction_plot = TRUE,
+  output_tic = FALSE,
+  output_bpc = FALSE,
+  output_rt_correction_plot = FALSE,
   min_fraction = 0.5,
   fill_peaks = FALSE
 )
@@ -27,18 +27,19 @@ massprocesser::process_data(
 targeted_table <-
   readr::read_csv("cell_liang_2020/MS1/Result/Peak_table_for_cleaning.csv")
 
-mean_int <- targeted_table %>% 
-  dplyr::select(-c(variable_id:rt)) %>% 
-  apply(1, function(x){
+mean_int <- 
+  targeted_table %>%
+  dplyr::select(-c(variable_id:rt)) %>%
+  apply(1, function(x) {
     mean(x, na.rm = TRUE)
   })
 
-targeted_table<-
-  targeted_table %>% 
-  dplyr::select(variable_id:rt) %>% 
-  dplyr::mutate(mean_int = mean_int) %>% 
-  dplyr::arrange(dplyr::desc(mean_int)) %>% 
-  head(10) %>% 
+targeted_table <-
+  targeted_table %>%
+  dplyr::select(variable_id:rt) %>%
+  dplyr::mutate(mean_int = mean_int) %>%
+  dplyr::arrange(dplyr::desc(mean_int)) %>%
+  head(10) %>%
   dplyr::select(-mean_int)
 
 targeted_table
@@ -54,7 +55,7 @@ extract_eic(
   threads = 3,
   add_point = FALSE,
   path = "cell_liang_2020/MS1/Result/",
-  feature_type = "png", 
-  group_for_figure = "Subject"
+  feature_type = "pdf",
+  group_for_figure = "MS1",
+  width = 12
 )
-

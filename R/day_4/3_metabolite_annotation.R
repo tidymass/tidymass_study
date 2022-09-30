@@ -4,14 +4,15 @@ library(tidymass)
 masstools::setwd_project()
 rm(list = ls())
 
-dir.create("data_analysis/metabolite_annotaion",
-           showWarnings = FALSE,
-           recursive = TRUE)
+dir.create(
+  "data_analysis/metabolite_annotaion",
+  showWarnings = FALSE,
+  recursive = TRUE
+)
 setwd("data_analysis/metabolite_annotaion/")
 
 # Data preparation
-
-ms1_data =
+ms1_data <-
   readr::read_csv(file.path(
     system.file("ms1_peak", package = "metid"),
     "ms1.peak.table.csv"
@@ -70,18 +71,24 @@ object =
 
 object
 
-object@ms2_data
+extract_ms2_data(object)
 
 # Identify metabolites according to MS1
 data("snyder_database_rplc0.0.3", package = "metid")
 data_base <- snyder_database_rplc0.0.3
 data_base@spectra.data <- list()
 data_base@spectra.info$RT <- NA
-object1 =
+
+data_base
+
+object1 <-
   annotate_metabolites_mass_dataset(object = object,
                                     database = data_base)
 
 object1
+
+extract_annotation_table(object1)
+
 
 # Identify metabolites according to MS2
 data("snyder_database_rplc0.0.3", package = "metid")
@@ -104,5 +111,15 @@ object3 =
 
 head(extract_variable_info(object = object3))
 
-summary_annotation_table(object = object3, level = c(1, 3))
+object3
 
+summary_annotation_table(object = object3, level = c(1, 2, 3))
+
+object3
+
+export_mass_dataset(object = object3, path = "final_dataset")
+
+variable_info <-
+  extract_variable_info(object3)
+head(variable_info)
+write.csv(variable_info, file = "final_dataset/variable_info.csv", row.names = FALSE)

@@ -1,7 +1,9 @@
 no_source()
 
 library(tidymass)
+
 masstools::setwd_project()
+
 rm(list = ls())
 dir.create("data_analysis/pathway_enrichment",
            showWarnings = FALSE,
@@ -22,7 +24,6 @@ data("query_id_hmdb", package = "metpath")
 query_id_hmdb
 
 # Only remain the `Metabolic;primary_pathway`.
-
 
 #get the class of pathways
 pathway_class =
@@ -52,12 +53,16 @@ result =
 # Check the result:
 result
 
+result@result
+
+write.csv(result@result, file = "pathway_result.csv", row.names = FALSE)
+
 ## Plot to show pathway enrichment
 enrich_bar_plot(
   object = result,
   x_axis = "p_value_adjust",
   cutoff = 0.05,
-  top = 10
+  top = 3
 )
 
 enrich_scatter_plot(object = result)

@@ -43,7 +43,8 @@ kegg_pathway_database <-
 # Read and convert SMPDB pathway database.
 download_smpdb_pathway(path = "SMPDB_pathway")
 data <-
-  read_smpdb_pathway(path = "SMPDB_pathway", only_primarity_pathway = TRUE)
+  read_smpdb_pathway(path = "SMPDB_pathway",
+                     only_primarity_pathway = TRUE)
 smpdb_pathway_database <-
   convert_smpdb2metpath(data = data, path = "SMPDB_pathway")
 

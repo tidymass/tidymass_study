@@ -59,7 +59,6 @@ object %>%
   theme(axis.text = element_text(size = 5))
 
 # **Data normalization**
-
 ## Total/median/mean
 object1 <-
   normalize_data(object, method = "total")

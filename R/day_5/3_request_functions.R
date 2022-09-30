@@ -35,13 +35,12 @@ dim(x)
 head(x)
 
 # Get one specific metabolite information.
-
 x <-
   request_bigg_universal_metabolite(metabolite_id = "g3p",
                                     return_form = "list")
 names(x)
 x$database_link
-
+x
 # Get universal reaction information.
 
 x <-

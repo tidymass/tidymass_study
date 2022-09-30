@@ -2,17 +2,14 @@
 ###1.1 From CRAN
 install.packages("ggplot2")
 
-
 ###1.2 From BiocConductor
 BiocManager::install("Rdisop")
 
 ###1.3 From Github
 remotes::install_github("tidymass/masstools")
 
-
 #### 2. load one package
 library(masstools)
-
 
 ### 3. get help document
 ###3.1 package
@@ -20,6 +17,7 @@ help(package = "masstools")
 
 ###3.2 function
 ?ms2_plot
+
 spectrum1 <- data.frame(
   mz = c(
     87.50874,
@@ -48,7 +46,14 @@ spectrum1 <- data.frame(
     )
 )
 spectrum2 <- spectrum1
+
+ms2_plot(spectrum1)
+
+ms2_plot(spectrum1, interactive_plot = TRUE)
+
 ms2_plot(spectrum1, spectrum2)
+
+ms2_plot(spectrum1, spectrum2, interactive_plot = TRUE)
 
 
 ####4 object name
@@ -61,6 +66,7 @@ this_matrix
 
 ####5 system operation
 getwd()
+dir()
 setwd(".")
 setwd("..")
 setwd("tidymass_study/")
@@ -69,8 +75,10 @@ version
 
 sessionInfo()
 
-
+#####package installation directory
 .libPaths()
+
+###
 
 
 

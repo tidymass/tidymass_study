@@ -47,7 +47,8 @@ download_bigg_model(model_id = "iND750")
 
 # Download one GNPS compound database
 
-download_gnps_spectral_library(gnps_library = "HMDB", path = "GNPS_HMDB")
+download_gnps_spectral_library(gnps_library = "HMDB", 
+                               path = "GNPS_HMDB")
 
 # KEGG database
 

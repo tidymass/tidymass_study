@@ -13,22 +13,23 @@ setwd("data_analysis/in_house_database_construction/")
 
 # **MassBank**
 ## `msp` format
-write_msp_massbank(database = test.database, path = ".")
+write_msp_massbank(database = test.database, 
+                   path = ".")
 
 
 ## `mgf` format
-write_mgf_massbank(databasae = test.database, path = ".")
+write_mgf_massbank(database = test.database, path = ".")
 
 # **MoNA**
 ## `msp` format
-write_msp_mona(databasae = databasae, path = ".")
+write_msp_mona(database = test.database, path = ".")
 
 ## `mgf` format
-write_mgf_mona(databasae = databasae, path = ".")
+write_mgf_mona(database = test.database, path = ".")
 
 # **GNPS**
 ## `msp` format
-write_msp_gnps(databasae = databasae, path = ".")
+write_msp_gnps(database = test.database, path = ".")
 
 ## `mgf` format
-write_mgf_gnps(databasae = databasae, path = ".")
+write_mgf_gnps(database = test.database, path = ".")

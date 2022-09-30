@@ -30,6 +30,10 @@ x[[2]] %>% head()
 ###This means that `object` has 1000 variables and 8 samples.
 apply(object, 2, mean)
 
+apply(object, 2, function(x){
+  mean(x, na.rm = TRUE)
+})
+
 ###You can also get the sample ids and variables.
 colnames(object)
 head(rownames(object))
